@@ -1,0 +1,14 @@
+<div #boardContainer class="board-container">
+    <div #boardElement class="board">
+        <div class="cell-container" *ngFor="let cell of board.cells" (click)="board.selectCell(cell)">
+            <app-sudoku-cell-view 
+                (dragstart)="onDragStart($event, cell)" 
+                (dragenter)="onDragEnter(cell)"
+                class="cell" 
+                [cell]="cell" 
+                [selectedCells]="board.selectedCells" 
+                draggable="true"
+            ></app-sudoku-cell-view>
+        </div>
+    </div>
+</div>

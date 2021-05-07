@@ -1,0 +1,43 @@
+.notes {
+    font-size: 0.02em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 100%;
+
+    .note {
+        margin: 0;
+        text-align: center;
+        user-select: none;
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}
+
+.filled {
+    height: 100%;
+    font-size: 0.07em;
+    text-align: center;
+    user-select: none;
+}
+
+.prefilled {
+    background-color: #ddd;
+}
+
+.unmatched {
+    background-color: rgb(255, 219, 189);
+}
+
+.value-selected {
+    background-color: rgb(255, 153, 0);
+}
+
+.multi-selected {
+    background-color: rgb(160, 217, 255);
+}
+
+.selected {
+    background-color: rgb(72, 182, 255);
+}

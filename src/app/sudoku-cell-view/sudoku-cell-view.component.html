@@ -1,0 +1,26 @@
+<ng-container *ngIf="cell !== null">
+    <div 
+        *ngIf="cell.value !== null" 
+        class="filled"
+        [class.prefilled]="cell.prefill !== null"
+        [class.selected]="cell.isSelected(selectedCells)"
+        [class.value-selected]="cell.isValueSelected(selectedCells)"
+        [class.unmatched]="cell.isUnmatched(selectedCells)"
+    >
+        {{cell.value}}
+    </div>
+    <div 
+        [class.unmatched]="cell.isUnmatched(selectedCells)"
+        [class.selected]="cell.isSelected(selectedCells)"
+        [class.multi-selected]="cell.isMultiSelected(selectedCells)"
+        *ngIf="cell.value === null" 
+        class="notes">
+        <p 
+            *ngFor="let n of options" 
+            class="note" 
+            [class.hidden]="cell.getNotation(n)===0"
+            >
+            {{n}}
+        </p>
+    </div>
+</ng-container>
